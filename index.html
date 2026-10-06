@@ -11,17 +11,20 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Outfit,system-ui,-apple-system,"Segoe UI",sans-serif}
 a{color:var(--link)}
-header{background:linear-gradient(160deg,var(--verde),var(--fundo-verde));color:#fff;position:relative;overflow:hidden}
-.n{position:absolute;left:-70px;bottom:-110px;width:420px;height:420px;opacity:.13;pointer-events:none}
-.topo{max-width:860px;margin:0 auto;padding:22px 20px 44px;position:relative}
-.marca{display:flex;align-items:center;gap:12px;font-weight:700;font-size:21px}
-.logo{width:48px;height:48px;border-radius:12px;box-shadow:0 0 0 1.5px rgba(255,255,255,.55),0 4px 12px rgba(0,0,0,.18)}
-h1{font-size:clamp(30px,6vw,44px);line-height:1.1;margin:30px 0 8px;text-wrap:balance}
+header{background:linear-gradient(170deg,var(--verde) 35%,var(--fundo-verde));color:#fff;position:relative;overflow:hidden;min-height:88svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 20px 64px}
+.n{position:absolute;pointer-events:none;width:420px;height:420px;left:-130px;bottom:-30px}
+.n path{stroke-opacity:.13}
+.logo{width:112px;height:112px;overflow:visible}
+.nome b{display:block;font-size:30px;line-height:36px;font-weight:700;letter-spacing:.2px;margin-top:18px}
+.nome span{display:block;font-size:15px;line-height:20px;font-weight:600;margin-top:6px}
+.resto{position:relative;margin-top:40px;display:flex;flex-direction:column;align-items:center}
+h1{font-size:clamp(28px,6vw,40px);line-height:1.1;margin:0 0 8px;text-wrap:balance}
 .sub{margin:0;opacity:.92;font-size:16px}
-.play{display:inline-flex;align-items:center;gap:10px;margin-top:24px;background:#111;color:#fff;text-decoration:none;padding:11px 18px;border-radius:12px;font-weight:600;font-size:15px}
+.play{display:inline-flex;align-items:center;gap:10px;margin-top:22px;background:#111;color:#fff;text-decoration:none;padding:11px 18px;border-radius:12px;font-weight:600;font-size:15px}
 .play svg{width:22px;height:22px}
 .play:focus-visible{outline:3px solid #fff;outline-offset:2px}
-main{max-width:860px;margin:-20px auto 0;padding:0 20px 40px;position:relative}
+.desce{position:absolute;bottom:36px;left:50%;width:28px;height:28px;margin-left:-14px;color:#fff;opacity:.8}
+main{max-width:860px;margin:-24px auto 0;padding:0 20px 40px;position:relative}
 .doc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px clamp(18px,4vw,40px)}
 nav ol{margin:0 0 8px;padding-left:22px;columns:2;column-gap:28px;font-size:15px}
 nav li{margin:3px 0;break-inside:avoid}
@@ -34,16 +37,37 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 32px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head>
 <body>
-<header>
-<svg class="n" viewBox="260 240 505 545" aria-hidden="true"><path d="M 339 706 L 339 318 L 685.3 706 L 685.3 397.0" stroke="#fff" stroke-width="138" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-<div class="topo">
-<div class="marca"><img class="logo" src="icone.png" alt="" width="48" height="48">No Controle</div>
+<header id="topo">
+<svg class="n" id="ng" viewBox="260 240 505 545" aria-hidden="true"><path d="M 339 706 L 339 318 L 685.3 706 L 685.3 397.0" stroke="#fff" stroke-width="138" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1217" stroke-dashoffset="1217"/></svg>
+<svg class="logo" viewBox="140 140 744 744" aria-hidden="true"><defs><clipPath id="r"><path d="M -2000 -2000 H 3000 V 3000 H -2000 Z M 574.2 648.9 L 875.2 346.9 L 744.8 217.1 L 443.8 519.1 Z" clip-rule="evenodd"/></clipPath></defs><path class="tn" d="M 339 706 L 339 318 L 685.3 706 L 685.3 397.0" stroke="#0A5C4B" stroke-width="138" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1217 1217" style="stroke-opacity:0"/><path class="tc" d="M 685.3 397.0 A 245 245 0 1 0 656.7 669.5" stroke="#0A5C4B" stroke-width="138" fill="none" stroke-linecap="round" clip-path="url(#r)" stroke-dasharray="1249"/><path class="tk" d="M 412 498 L 509 584 L 810 282" stroke="#F2C14E" stroke-width="134" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="556"/></svg>
+<div class="nome"><b>No Controle</b><span>Suas finanças, mês a mês.</span></div>
+<div class="resto">
 <h1>Política de Privacidade</h1>
 <p class="sub">Atualizada em 6 de outubro de 2026.</p>
 <a class="play" href="https://play.google.com/store/apps/details?id=com.pinho.app" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34A853" d="M3.6 2.2 13.4 12l-9.8 9.8c-.4-.2-.6-.7-.6-1.2V3.4c0-.5.2-1 .6-1.2z"/><path fill="#FBBC04" d="m16.8 15.4-3.4-3.4 3.4-3.4 3.8 2.2c1.1.6 1.1 1.8 0 2.4z"/><path fill="#EA4335" d="M13.4 12 3.6 21.8c.4.2.9.2 1.4-.1l11.8-6.3z"/><path fill="#4285F4" d="M13.4 12 16.8 8.6 5 2.3c-.5-.3-1-.3-1.4-.1z"/></svg>Baixar na Google Play</a>
 </div>
+<a class="desce" href="#politica" aria-label="Ler a política"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a>
 </header>
-<main><article class="doc">
+<script>
+(function(){
+var h=document.getElementById('topo'),ng=document.getElementById('ng'),png=ng.querySelector('path');
+var LN=1217,LC=1249,LK=556,n=h.querySelector('.tn'),c=h.querySelector('.tc'),k=h.querySelector('.tk'),nome=h.querySelector('.nome'),resto=h.querySelector('.resto');
+function pos(){var w=h.clientWidth,a=h.clientHeight,l=Math.min(w*1.15,a*.62);ng.style.width=ng.style.height=l+'px';ng.style.left=-l*.32+'px';ng.style.top=(a-l*.92)+'px';ng.style.bottom='auto';}
+pos();addEventListener('resize',pos);
+var io=function(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2},out=function(t){return 1-Math.pow(1-t,3)},cl=function(v){return Math.max(0,Math.min(1,v))};
+var parado=matchMedia('(prefers-reduced-motion: reduce)').matches,t0=performance.now();
+function q(now){var t=parado?1e5:now-t0-80;
+ var cab=(LN+LC)*io(cl(t/1600)),cau=LN*io(cl((t-800)/950)),ri=out(cl((t-1400)/420));
+ n.style.strokeDashoffset=cab<LN?LN-cab:-cau;n.style.strokeOpacity=cab>.5&&cau<LN-.5?1:0;
+ var f=Math.min(LC,Math.max(0,cab-LN));c.style.strokeDashoffset=LC-f;c.style.strokeOpacity=f>.5?1:0;
+ k.style.strokeDashoffset=LK*(1-ri);k.style.strokeOpacity=ri>.001?1:0;
+ var g=io(cl((t+80)/1500));png.style.strokeDashoffset=LN*(1-g);
+ nome.style.opacity=cl((t-1200)/300);resto.style.opacity=cl((t-1500)/400);
+ if(t<2000)requestAnimationFrame(q);}
+q(t0);requestAnimationFrame(q);
+})();
+</script>
+<main id="politica"><article class="doc">
 <nav aria-label="Seções"><p class="rot">Nesta página</p><ol><li><a href="#s1">Quem cuida dos seus dados</a></li><li><a href="#s2">Quais dados e de onde vêm</a></li><li><a href="#s3">Para que usamos e com qual base legal</a></li><li><a href="#s4">Com quem compartilhamos</a></li><li><a href="#s5">Open Finance</a></li><li><a href="#s6">Como protegemos</a></li><li><a href="#s7">Por quanto tempo</a></li><li><a href="#s8">Seus direitos e como usar</a></li><li><a href="#s9">Menores de idade</a></li><li><a href="#s10">Mudanças nesta política</a></li></ol></nav>
 <section id="s1"><h2>1. Quem cuida dos seus dados</h2><p>O No Controle é um aplicativo de organização das finanças pessoais. O controlador dos seus dados, nos termos da Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018), é o responsável pelo No Controle.</p><p>Para qualquer assunto sobre os seus dados, inclusive para falar com o encarregado, escreva para privacidade@vocenocontrole.app.br.</p><p>Esta política explica, em linguagem simples, o que o app guarda, onde, para quê, com quem e por quanto tempo.</p></section>
 <section id="s2"><h2>2. Quais dados e de onde vêm</h2><p>Conta: o seu e-mail e a sua senha. A senha nunca fica no app: ela vai por conexão segura (https) para o servidor conferir, e o servidor guarda só uma versão embaralhada dela.</p><p>Perfil, informado por você no cadastro: a idade, o sexo (Feminino, Masculino, Outro ou Prefiro não dizer) e o estado civil (Solteiro(a), Casado(a) ou em união estável, ou Prefiro não dizer), mais a versão e a data em que você aceitou estes termos. Você pode responder "Prefiro não dizer" e mudar tudo depois em Ajustes &gt; Sua conta.</p><p>Dados financeiros que você mesmo lança: lançamentos (valor, descrição, categoria, data, forma de pagamento, parcelas), contas e saldos, cartões, categorias, o planejamento de cada mês, objetivos, bens e dívidas do Patrimônio, as regras de categoria que o app aprendeu com você e o nome com que quer ser chamado.</p><p>Dos cartões, o app guarda só o nome, os 4 últimos números e os dias de fechamento e vencimento. Nunca o número inteiro, a validade ou o código de segurança.</p><p>Dados do Open Finance (só se você conectar um banco, no Premium): contas e saldos, cartões e faturas, lançamentos, investimentos e, quando o banco oferece, empréstimos. Ver a seção 5.</p><p>Dados que ficam só no seu celular e nunca vão para a nuvem: a foto do perfil, o tema e as cores escolhidas, o ícone do app, a biometria (quem confere é o próprio Android; o app só recebe "deu certo" ou não), a senha do aplicativo de 6 números (guardada só como um resumo embaralhado com sal, no cofre do celular) e os lembretes agendados.</p><p>Registros técnicos: quando você entra, cria a conta ou troca a senha, o nosso provedor de nuvem registra o acesso (data, hora e endereço IP), como todo servidor faz.</p><p>O app não pede localização, câmera, microfone, contatos nem acesso aos arquivos do celular, e não usa anúncios, rastreadores nem ferramentas de análise de terceiros.</p></section>
